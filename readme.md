@@ -5,3 +5,7 @@ Generally the tabbing softwares make use of the standard hungarian algorithm to 
 My goal with this project is to de-compile an implementation of Hungarian shuffling and determine the scores teams would have gotten for such a draw to be generated. I expect this to take some time but hopefully this will be done before 2022 USUDC.
 
 One of the key obstacles to accurate backtabbing is the Renyi Entropy cost function but I think that in sizable tournaments with enough number of rooms, the result could be approximated relatively with ease by assigning certain value to each possible draw that could be generated from the given scores and looking at their deviation value from the value assigned to the draw of a silent round. We could thus convert this into a minimization problem. This is similar to how softwares like stockfish bypass excessive calculation. 
+
+
+Update: Aug 16:
+To be honest, looking into making this work, I realized that maybe reverse engineering the hungarian algorithm is probably not the best way to go, although it is intellectually interesting. One possible idea that I am thinking of working with is to feed the tabs of the silent rounds to train a Machine Learning model as the entire thing is fairly deterministic. Tokenizing each team with their scores prior to silent rounds should help maintain concreteness.
